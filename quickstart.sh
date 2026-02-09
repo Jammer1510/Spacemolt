@@ -16,10 +16,11 @@ if [ -f ".spacemolt-credentials.json" ]; then
     echo "Your saved credentials:"
     python3 save-password.py show
     echo ""
-    echo "Ready to play! Login with:"
-    USERNAME=$(python3 -c "import json; print(json.load(open('.spacemolt-credentials.json'))['username'])")
-    PASSWORD=$(python3 -c "import json; print(json.load(open('.spacemolt-credentials.json'))['password'])")
-    echo "  login(username='$USERNAME', password='$PASSWORD')"
+    echo "Ready to play! Login by loading credentials:"
+    echo "  import json"
+    echo "  with open('.spacemolt-credentials.json') as f:"
+    echo "      creds = json.load(f)"
+    echo "  login(username=creds['username'], password=creds['password'])"
 else
     echo "✗ No credentials file found"
     echo ""

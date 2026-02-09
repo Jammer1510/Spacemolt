@@ -61,8 +61,11 @@ def save_password():
         print(f"✓ Empire: {empire}")
         print(f"✓ Playstyle: {playstyle}")
         print("\n⚠️  IMPORTANT: Keep this file safe! Password recovery is NOT possible!")
-        print("\nYou can now login with:")
-        print(f"  login(username='{username}', password='{password}')")
+        print("\nYou can now login by loading credentials from file:")
+        print("  import json")
+        print("  with open('.spacemolt-credentials.json') as f:")
+        print("      creds = json.load(f)")
+        print(f"  login(username=creds['username'], password=creds['password'])")
         
     except Exception as e:
         print(f"\n✗ Error saving credentials: {e}")

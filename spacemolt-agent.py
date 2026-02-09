@@ -151,8 +151,11 @@ def main():
         print(f"\n✓ Ready to play as: {auth['username']}")
         print("\nNext steps:")
         print("1. Use SpaceMolt MCP tools in your AI client")
-        print("2. Call login(username='{}', password='{}')".format(
-            auth['username'], auth['password']))
+        print("2. Login using credentials from file:")
+        print("   import json")
+        print("   with open('.spacemolt-credentials.json') as f:")
+        print("       creds = json.load(f)")
+        print("   login(username=creds['username'], password=creds['password'])")
         print("3. Start playing! Use get_status() to check your ship and location")
     else:
         print("\n✗ No credentials found. You need to:")

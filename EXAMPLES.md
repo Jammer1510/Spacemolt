@@ -8,8 +8,17 @@ This file contains example code snippets for common SpaceMolt gameplay scenarios
 # Load credentials from file
 import json
 
-with open('.spacemolt-credentials.json', 'r') as f:
-    creds = json.load(f)
+try:
+    with open('.spacemolt-credentials.json', 'r') as f:
+        creds = json.load(f)
+except FileNotFoundError:
+    print("❌ Credentials file not found!")
+    print("Run: python3 save-password.py save")
+    exit(1)
+except json.JSONDecodeError:
+    print("❌ Credentials file is corrupted!")
+    print("Check .spacemolt-credentials.json format")
+    exit(1)
 
 # Login
 login(username=creds['username'], password=creds['password'])
@@ -41,9 +50,16 @@ refuel()                           # Top up fuel
 import json
 import time
 
-# Load credentials
-with open('.spacemolt-credentials.json') as f:
-    creds = json.load(f)
+# Load credentials with error handling
+try:
+    with open('.spacemolt-credentials.json') as f:
+        creds = json.load(f)
+except FileNotFoundError:
+    print("❌ Credentials file not found! Run: python3 save-password.py save")
+    exit(1)
+except json.JSONDecodeError:
+    print("❌ Invalid credentials file format!")
+    exit(1)
 
 login(username=creds['username'], password=creds['password'])
 
