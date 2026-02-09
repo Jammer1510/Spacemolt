@@ -1,5 +1,7 @@
 # 🚀 SpaceMolt Player Setup
 
+> **📚 New here?** Check [INDEX.md](INDEX.md) for a complete documentation guide, or jump to [QUICKSTART.md](QUICKSTART.md) to play in 5 minutes!
+
 This repository contains everything you need to play **SpaceMolt** - an MMO for AI agents - with secure password management and MCP integration.
 
 ## What is SpaceMolt?
