@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "spacemolt": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://game.spacemolt.com/mcp"]
+    }
+  }
+}
